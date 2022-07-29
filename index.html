@@ -162,16 +162,15 @@
             <div class="service-stripe small-12 columns no-padding">
                 <div class="global-page-container">
                     <div class="service-stripe-inner small-12 columns no-padding">
-                        
+
                         <div id="service-previous" class="stripe-arrow small-1 columns no-padding">    
                                     <p><</p>
                         </div>
                         
                         <div class="stripe-content small-10 columns no-padding">
-                            <span id="service-title">Webdesign.</span> <p id ="service-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus 
-                            tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. 
-                            Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum 
-                            dictum nisi.</p>
+                            <span id="service-title">Webdesign.</span> <p id ="service-text">Através da 
+                                expertise de nossos colaboradores oferecemos o que há de melhor das tecnologias
+                                 do Design Web para nossos clientes</p>
                         </div>
                             
                         <div id="service-next" class="stripe-arrow small-1 columns no-padding">
@@ -304,17 +303,54 @@
 
                 <div class="contact-form small-12 medium-10 large-6 columns no-padding small-centered">
 
-                    <form id="email_form">
+                    <form action="https://postmail.invotes.com/send"
+    method="post" id="email_form">
 
-                        <input type="text" name="subject" class="field" placeholder="Nome completo"/>
-                            
-                        <input type="text" name="extra_email" class="field" placeholder="E-mail"/>
-                        
-                        <textarea type="text" name="text" class="field" placeholder="Mensagem"></textarea>
-                    
-                        <input id="submit_form" type="submit" value="Enviar" />
-                        
-                    </form>
+    <input type="text" name="subject" placeholder="Assunto" />
+    <input type="text" name="extra_nome"
+    placeholder="Nome" />
+    <input type="text" name="reply_to"
+                placeholder="Seu e-mail" />
+    <textarea name="text" placeholder="Mensagem"></textarea>
+    <input type="hidden" name="access_token" value="ydeoifc96uvjwhawlwgxf1qa" />
+      <!-- return urls can be fully qualified -OR-
+         start with / for root relative -OR-
+         start with . for url relative --> 
+    <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+    <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+   
+
+    <!-- set the reply-to address -->
+    <!-- <input type="text" name="reply_to"
+                placeholder="Your Email" /> -->
+
+    <!-- to append extra fields, use the extra_ prefix.
+        Entries will be appended to your message body. -->
+    <!-- <input type="text" name="extra_phone_number"
+                placeholder="Phone Number" /> -->
+
+    <!-- to split your message into 160 chars
+         for an sms gateway -->
+    <!-- <input type="hidden"
+                name="sms_format" value="true" /> -->
+   
+    <input id="submit_form" type="submit" value="Enviar" />
+    <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+    <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
+</form>
+     
+<!-- optional, prevents the submit button from being pressed more than once -->
+<script>
+    var submitButton = document.getElementById("submit_form");
+    var form = document.getElementById("email_form");
+    form.addEventListener("submit", function (e) {
+        setTimeout(function() {
+            submitButton.value = "Enviando...";
+            submitButton.disabled = true;
+        }, 1);
+    });
+</script> 
+
 
                 </div>
 
@@ -339,10 +375,10 @@
                     <div class="contato small-5 medium-3 small-offset-1 medium-offset-0 columns">
                         <h4 class="footer-section-title">Contato</h4>
                         <p>
-                            Av. Paulista, 500<br>
-                            São Paulo/SP<br>
-                            T. 2245-0977<br>
-                            contato@wedesign.com.br
+                            R. Emílio de Almeida Torres, 39<br>
+                            Curitiba/PR<br>
+                            T. (41) 99714-2661<br>
+                            brunaravelli13@gmail.com
                         </p>
                     </div>
                     
@@ -357,6 +393,17 @@
                     <div class="como-chegar small-5 medium-3 small-offset-1 medium-offset-0 columns">
                         <h4 class="footer-section-title">Como chegar</h4>
                         <div id="map"></div>
+        
+
+                        <script async
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0mvcbuc2MjHlW3YfHIRK09EBa5m701s&callback=initMap">
+                    </script>
+
+                        
+
+
+
+
                     </div>
                     
                     <hr></hr>

@@ -51,17 +51,17 @@ for (let i = 0; i < about_tags.length; i++) {
 var our_services = [
   {
     'title': 'Webdesign',
-    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
+    'text': 'Através da expertise de nossos colaboradores oferecemos o que há de melhor das tecnologias do Design Web para nossos clientes.'
   },
 
   {
     'title': 'Branding',
-    'text': 'Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
+    'text': 'Através de um brandind alinhado as principais tendências do mercado, permitimos que sua empresa se aproxime daqueles que mais importam, seus clientes.'
   },
 
   {
     'title': 'Marketing Digital',
-    'text': 'Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus.'
+    'text': 'Um marketing digital perfeito para cada parte de sua empresa.'
   }
   
 ];
@@ -125,3 +125,28 @@ var our_services = [
 
    
   };
+//  Data Footer
+
+var ano_atual = new Date;
+ano_atual = ano_atual.getFullYear();
+  // current_year
+
+  document.getElementById("current_year").innerHTML = ano_atual;
+
+
+  //  map
+
+ 
+
+
+  // API Key: AIzaSyCKgDsvpndndbxSzB-eV9N3i7JZRxG_4hE
+
+function initMap() {
+  var uluru = {lat: -25.441434, lng: -49.308482};
+
+  var map = new google.maps.Map(document.getElementById("map"), {zoom: 16, center: uluru});
+
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
+window.initMap = initMap;
